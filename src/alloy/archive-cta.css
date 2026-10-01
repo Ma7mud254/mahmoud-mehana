@@ -1,0 +1,6 @@
+/* Archive CTA — larger and highlighted (ALLOY lime accent). */
+.work-directory-link{font-size:13px;font-weight:600;color:#eaffb9;padding-top:8px}
+.work-directory-link .round-outline{background:#b8dc66;border-color:#b8dc66;color:#1d2414}
+.work-directory-link:hover{color:#f2ffd2}
+.work-directory-link:hover .round-outline{background:#d1fa7b;border-color:#d1fa7b}
+@media(min-width:1600px){.work-directory-link{font-size:15px}}
