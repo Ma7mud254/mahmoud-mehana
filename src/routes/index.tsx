@@ -21,7 +21,11 @@ export const Route = createFileRoute("/")({
           "Custom Shopify development, Liquid, Arabic storefronts, and the brands behind the work.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: ogImage },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: ogImage },
     ],
     scripts: [
       {
