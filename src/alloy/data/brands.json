@@ -1,0 +1,757 @@
+[
+  {
+    "id": "aghsan",
+    "name": "Aghsan",
+    "logo": "logos/aghsan.webp",
+    "category": "Fashion",
+    "url": "https://aghsanshop.com/",
+    "featured": true,
+    "theme": "aghsan",
+    "headline": "A considered home for modern modestwear.",
+    "meta": "Fashion / Shopify",
+    "tags": [
+      "Shopify development",
+      "Brand experience"
+    ],
+    "description": "A modestwear brand with an e-commerce experience for its collections.",
+    "note": "Selected Shopify work. Scope varies by project."
+  },
+  {
+    "id": "avens-cosmetics",
+    "name": "Avens Cosmetics",
+    "logo": "logos/avens-cosmetics.webp",
+    "category": "Beauty",
+    "url": "https://www.avenscosmeticseg.com/en",
+    "featured": true,
+    "theme": "avens",
+    "headline": "Beauty, with a considered digital home.",
+    "meta": "Beauty / Shopify",
+    "tags": [
+      "Shopify development",
+      "E-commerce experience"
+    ],
+    "description": "A cosmetics storefront bringing product collections and brand identity together.",
+    "note": "Selected Shopify work. Live store content may have changed since delivery."
+  },
+  {
+    "id": "ctrl-cairo",
+    "name": "CTRL Cairo",
+    "logo": "logos/ctrl-cairo.webp",
+    "category": "Fashion",
+    "url": "https://www.ctrlcairo.com/",
+    "featured": true,
+    "theme": "street",
+    "headline": "Independent style. Thoughtful storefront.",
+    "meta": "Fashion / Shopify",
+    "tags": [
+      "Storefront development",
+      "Brand-led UI"
+    ],
+    "description": "A fashion storefront built around a distinctive brand identity.",
+    "note": "An editorial brand presentation; visit the live store to explore the current website."
+  },
+  {
+    "id": "mema-outlet",
+    "name": "Mema Outlet",
+    "logo": "logos/mema-outlet.webp",
+    "category": "Fashion",
+    "url": "https://memaoutlet.com/",
+    "featured": true,
+    "theme": "mema",
+    "headline": "A polished destination for everyday style.",
+    "meta": "Fashion / Shopify",
+    "tags": [
+      "Figma to Shopify",
+      "Theme customization"
+    ],
+    "description": "Brand-led Shopify customization with attention to navigation, typography, and responsive details.",
+    "note": "Selected contribution: design-led Shopify customization."
+  },
+  {
+    "id": "scents-boutique",
+    "name": "Scents Boutique",
+    "logo": "logos/scents-boutique.webp",
+    "category": "Beauty",
+    "url": "https://scents-boutiqe.com/",
+    "featured": true,
+    "theme": "scent",
+    "headline": "A fragrance experience, thoughtfully composed.",
+    "meta": "Beauty / Shopify",
+    "tags": [
+      "Custom Liquid",
+      "Landing pages",
+      "Responsive UI"
+    ],
+    "description": "Page-specific Shopify layouts, custom Liquid sections, and careful mobile presentation.",
+    "note": "Selected contribution: custom layouts and responsive storefront components."
+  },
+  {
+    "id": "tashkeel",
+    "name": "Tashkeel",
+    "logo": "logos/tashkeel.webp",
+    "category": "Books",
+    "url": "https://dartashkeel.com/",
+    "featured": true,
+    "theme": "books",
+    "headline": "Every great story deserves a great beginning.",
+    "meta": "Publishing / Shopify",
+    "tags": [
+      "Custom templates",
+      "Metafields",
+      "Custom sections"
+    ],
+    "description": "Custom Shopify templates, dynamic metafield content, and responsive storefront sections.",
+    "note": "Selected contribution: custom templates and storefront customization."
+  },
+  {
+    "id": "3m-watches",
+    "name": "3M-Watches",
+    "logo": null,
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "abu-heiba",
+    "name": "Abu Heiba",
+    "logo": "logos/abu-heiba.webp",
+    "category": "Fashion",
+    "url": "https://aboheiba.com/"
+  },
+  {
+    "id": "ahmc",
+    "name": "AHMC",
+    "logo": "logos/ahmc.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "al-baidaa",
+    "name": "Al Baidaa",
+    "logo": "logos/al-baidaa.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "al-faeq-store",
+    "name": "Al Faeq Store",
+    "logo": "logos/al-faeq-store.webp",
+    "category": "Technology",
+    "url": null
+  },
+  {
+    "id": "al-gharbi",
+    "name": "Al Gharbi",
+    "logo": "logos/al-gharbi.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "al-khawaja",
+    "name": "Al Khawaja",
+    "logo": "logos/al-khawaja.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "al-tadwen-al-araby",
+    "name": "Al Tadwen Al Araby",
+    "logo": "logos/al-tadwen-al-araby.webp",
+    "category": "Books",
+    "url": "https://altadwenalaraby.com/"
+  },
+  {
+    "id": "ala-wesh-gawaz",
+    "name": "Ala Wesh Gawaz",
+    "logo": "logos/ala-wesh-gawaz.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "alsultan-dates",
+    "name": "Alsultan Dates",
+    "logo": "logos/alsultan-dates.webp",
+    "category": "Food",
+    "url": null
+  },
+  {
+    "id": "appe-egypt",
+    "name": "APPE Egypt",
+    "logo": null,
+    "category": "Beauty",
+    "url": "https://egyappe.com/"
+  },
+  {
+    "id": "areeza",
+    "name": "Areeza",
+    "logo": "logos/areeza.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "asya",
+    "name": "Asya",
+    "logo": "logos/asya.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "atheer",
+    "name": "Atheer",
+    "logo": null,
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "azira-fashion",
+    "name": "Azira Fashion",
+    "logo": "logos/azira-fashion.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "beauty-box",
+    "name": "Beauty Box",
+    "logo": "logos/beauty-box.webp",
+    "category": "Beauty",
+    "url": null
+  },
+  {
+    "id": "bequem",
+    "name": "BEQUEM",
+    "logo": "logos/bequem.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "blue-ray",
+    "name": "Blue Ray",
+    "logo": "logos/blue-ray.webp",
+    "category": "Technology",
+    "url": null
+  },
+  {
+    "id": "bumpino-boutique",
+    "name": "Bumpino Boutique",
+    "logo": "logos/bumpino-boutique.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "casa-di-gelato",
+    "name": "CASA DI GELATO",
+    "logo": "logos/casa-di-gelato.webp",
+    "category": "Food",
+    "url": null
+  },
+  {
+    "id": "chat-x",
+    "name": "Chat X",
+    "logo": "logos/chat-x.webp",
+    "category": "Technology",
+    "url": null
+  },
+  {
+    "id": "cozmazone",
+    "name": "Cozmazone",
+    "logo": null,
+    "category": "Beauty",
+    "url": "https://cozmazone.com/ar"
+  },
+  {
+    "id": "dafy",
+    "name": "dafy",
+    "logo": "logos/dafy.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "dai-el-amar",
+    "name": "Dai El Amar",
+    "logo": "logos/dai-el-amar.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "dar-el-atour",
+    "name": "Dar El Atour",
+    "logo": "logos/dar-el-atour.webp",
+    "category": "Beauty",
+    "url": null
+  },
+  {
+    "id": "dawen",
+    "name": "Dawen",
+    "logo": "logos/dawen.webp",
+    "category": "Books",
+    "url": null
+  },
+  {
+    "id": "deja",
+    "name": "DEJA",
+    "logo": "logos/deja.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "dekohomix",
+    "name": "Dekohomix",
+    "logo": "logos/dekohomix.webp",
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "diriyahsolutions",
+    "name": "Diriyahsolutions",
+    "logo": "logos/diriyahsolutions.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "diverso",
+    "name": "Diverso",
+    "logo": "logos/diverso.webp",
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "dr-s-secret-plus",
+    "name": "Dr's Secret Plus",
+    "logo": "logos/dr-s-secret-plus.webp",
+    "category": "Beauty",
+    "url": null
+  },
+  {
+    "id": "droob-taibah",
+    "name": "Droob Taibah",
+    "logo": "logos/droob-taibah.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "edafa-home",
+    "name": "Edafa Home",
+    "logo": null,
+    "category": "Lifestyle",
+    "url": "https://edafahome.com/"
+  },
+  {
+    "id": "elle-perfume",
+    "name": "Elle Perfume",
+    "logo": "logos/elle-perfume.webp",
+    "category": "Beauty",
+    "url": null
+  },
+  {
+    "id": "ema-mousa",
+    "name": "Ema Mousa",
+    "logo": "logos/ema-mousa.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "eshtrakat",
+    "name": "Eshtrakat",
+    "logo": "logos/eshtrakat.webp",
+    "category": "Technology",
+    "url": null
+  },
+  {
+    "id": "evolve",
+    "name": "Evolve",
+    "logo": "logos/evolve.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "fluffy",
+    "name": "Fluffy",
+    "logo": "logos/fluffy.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "foreera-store",
+    "name": "Foreera Store",
+    "logo": "logos/foreera-store.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "funcora",
+    "name": "Funcora",
+    "logo": "logos/funcora.webp",
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "ghallab",
+    "name": "Ghallab",
+    "logo": "logos/ghallab.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "glorify",
+    "name": "Glorify",
+    "logo": "logos/glorify.webp",
+    "category": "Beauty",
+    "url": null
+  },
+  {
+    "id": "glowlight",
+    "name": "Glowlight",
+    "logo": "logos/glowlight.webp",
+    "category": "Beauty",
+    "url": null
+  },
+  {
+    "id": "granova",
+    "name": "Granova",
+    "logo": "logos/granova.webp",
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "hala-food",
+    "name": "Hala Food",
+    "logo": "logos/hala-food.webp",
+    "category": "Food",
+    "url": "https://halafood.eu/"
+  },
+  {
+    "id": "hamada-phone",
+    "name": "Hamada Phone",
+    "logo": "logos/hamada-phone.webp",
+    "category": "Technology",
+    "url": null
+  },
+  {
+    "id": "hayaa-fashion",
+    "name": "Hayaa Fashion",
+    "logo": "logos/hayaa-fashion.webp",
+    "category": "Fashion",
+    "url": "https://hayaafashioneg.com/"
+  },
+  {
+    "id": "jessy",
+    "name": "Jessy",
+    "logo": null,
+    "category": "Fashion",
+    "url": "https://jessy-store.com/"
+  },
+  {
+    "id": "jrm",
+    "name": "JRM",
+    "logo": "logos/jrm.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "kayan",
+    "name": "Kayan",
+    "logo": "logos/kayan.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "kayan-international-plus",
+    "name": "Kayan International Plus",
+    "logo": "logos/kayan-international-plus.webp",
+    "category": "Technology",
+    "url": null
+  },
+  {
+    "id": "khadiga",
+    "name": "Khadiga",
+    "logo": "logos/khadiga.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "khiam",
+    "name": "Khiam",
+    "logo": "logos/khiam.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "lanell",
+    "name": "Lanell",
+    "logo": null,
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "little-sultan",
+    "name": "Little-Sultan",
+    "logo": "logos/little-sultan.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "luxury-life",
+    "name": "Luxury Life",
+    "logo": "logos/luxury-life.webp",
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "mansouj",
+    "name": "MANSOUJ",
+    "logo": "logos/mansouj.webp",
+    "category": "Fashion",
+    "url": "https://mansouj.shop/"
+  },
+  {
+    "id": "masar",
+    "name": "Masar",
+    "logo": "logos/masar.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "medad-alhuda",
+    "name": "Medad Alhuda",
+    "logo": "logos/medad-alhuda.webp",
+    "category": "Books",
+    "url": null
+  },
+  {
+    "id": "mikjo-store-dody",
+    "name": "Mikjo Store Dody",
+    "logo": "logos/mikjo-store-dody.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "miss-candy",
+    "name": "Miss Candy",
+    "logo": "logos/miss-candy.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "montelux",
+    "name": "Montelux",
+    "logo": null,
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "nabaa-quran",
+    "name": "Nabaa Quran",
+    "logo": "logos/nabaa-quran.webp",
+    "category": "Books",
+    "url": null
+  },
+  {
+    "id": "nawah",
+    "name": "Nawah",
+    "logo": "logos/nawah.webp",
+    "category": "Food",
+    "url": null
+  },
+  {
+    "id": "next-rich",
+    "name": "Next-Rich",
+    "logo": "logos/next-rich.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "nigellaeg",
+    "name": "Nigellaeg",
+    "logo": "logos/nigellaeg.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "nouf-fetaihi",
+    "name": "Nouf Fetaihi",
+    "logo": "logos/nouf-fetaihi.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "odessa",
+    "name": "Odessa",
+    "logo": "logos/odessa.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "opal",
+    "name": "OPAL",
+    "logo": "logos/opal.webp",
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "orchidia",
+    "name": "Orchidia",
+    "logo": "logos/orchidia.webp",
+    "category": "Beauty",
+    "url": "https://eshop.orchidiapharma.com/"
+  },
+  {
+    "id": "pearl-hanger",
+    "name": "Pearl-Hanger",
+    "logo": null,
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "pittad",
+    "name": "PITTA’D",
+    "logo": "logos/pittad.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "pixy-hijab-brand",
+    "name": "Pixy Hijab Brand",
+    "logo": null,
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "psych-online-store",
+    "name": "PSYCH Online Store",
+    "logo": "logos/psych-online-store.webp",
+    "category": "Fashion",
+    "url": "https://psychonlinestore.com/"
+  },
+  {
+    "id": "qayro",
+    "name": "Qayro",
+    "logo": "logos/qayro.webp",
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "raqi-shoes",
+    "name": "Raqi Shoes",
+    "logo": "logos/raqi-shoes.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "reborn",
+    "name": "Reborn",
+    "logo": "logos/reborn.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "rebox",
+    "name": "Rebox",
+    "logo": "logos/rebox.webp",
+    "category": "Technology",
+    "url": null
+  },
+  {
+    "id": "rosira",
+    "name": "Rosira",
+    "logo": "logos/rosira.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "royal-honey-apiary",
+    "name": "Royal Honey Apiary",
+    "logo": "logos/royal-honey-apiary.webp",
+    "category": "Food",
+    "url": null
+  },
+  {
+    "id": "sadaf",
+    "name": "SADAF",
+    "logo": "logos/sadaf.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "sam-hijab",
+    "name": "Sam Hijab",
+    "logo": "logos/sam-hijab.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "si-natural",
+    "name": "Si Natural",
+    "logo": "logos/si-natural.webp",
+    "category": "Beauty",
+    "url": null
+  },
+  {
+    "id": "siwa-pharm",
+    "name": "Siwa Pharm",
+    "logo": "logos/siwa-pharm.webp",
+    "category": "Beauty",
+    "url": null
+  },
+  {
+    "id": "sofie-store",
+    "name": "Sofie Store",
+    "logo": "logos/sofie-store.webp",
+    "category": "Beauty",
+    "url": "https://sofiestore.net/"
+  },
+  {
+    "id": "sportx",
+    "name": "SportX",
+    "logo": "logos/sportx.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "tfaseel",
+    "name": "Tfaseel",
+    "logo": "logos/tfaseel.webp",
+    "category": "Other",
+    "url": null
+  },
+  {
+    "id": "tiramisu-cake-uk",
+    "name": "Tiramisu Cake UK",
+    "logo": "logos/tiramisu-cake-uk.webp",
+    "category": "Food",
+    "url": null
+  },
+  {
+    "id": "top-chef-mart",
+    "name": "Top Chef Mart",
+    "logo": "logos/top-chef-mart.webp",
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "town-eagle",
+    "name": "Town eagle",
+    "logo": "logos/town-eagle.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "viorette",
+    "name": "Viorette",
+    "logo": "logos/viorette.webp",
+    "category": "Fashion",
+    "url": null
+  },
+  {
+    "id": "watch",
+    "name": "WATCH",
+    "logo": null,
+    "category": "Lifestyle",
+    "url": null
+  },
+  {
+    "id": "yanabee",
+    "name": "Yanabee",
+    "logo": "logos/yanabee.webp",
+    "category": "Other",
+    "url": null
+  }
+]

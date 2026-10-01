@@ -1,24 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { AlloyPortfolio } from "@/components/AlloyPortfolio";
+
+const title = "Mahmoud Mehana — Shopify Developer | Building considered Shopify experiences";
+const description =
+  "Mahmoud Mehana — Shopify Developer | Building considered Shopify experiences. Custom Liquid, Figma to Shopify, responsive storefronts and thoughtful e-commerce experiences. Explore the work and start a conversation.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { name: "theme-color", content: "#f3f2ea" },
+      { property: "og:title", content: "Mahmoud Mehana — Building considered Shopify experiences." },
+      {
+        property: "og:description",
+        content:
+          "Custom Shopify development, Liquid, Arabic storefronts, and the brands behind the work.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Mahmoud Mehana",
+          jobTitle: "Shopify Developer",
+          email: "mailto:arch.ma7mud@gmail.com",
+          telephone: ["+966509435879", "+201020600306"],
+          sameAs: [
+            "https://www.facebook.com/mahmoud.mehana87",
+            "https://www.linkedin.com/in/ma7mud-mehana/",
+          ],
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <AlloyPortfolio />;
 }
