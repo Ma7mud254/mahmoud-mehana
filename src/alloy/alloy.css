@@ -50,3 +50,9 @@
 html[lang="ar"] body,html[lang="ar"] button,html[lang="ar"] input,html[lang="ar"] textarea,html[lang="ar"] select{font-family:"Thmanyah Sans",Tahoma,Arial,sans-serif!important}
 html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .dialog-body h2,html[lang="ar"] .contact-copy h2,html[lang="ar"] .work-intro h2,html[lang="ar"] .expertise-section .section-intro h2{font-family:"Thmanyah Serif Display","Thmanyah Sans",Tahoma,Arial,sans-serif!important;font-feature-settings:"ss01" 1}
 html[lang="ar"] .project-card-content>strong,html[lang="ar"] .permanent-contact-links .contact-link strong,html[lang="ar"] .contact-form-heading{font-family:"Thmanyah Sans",Tahoma,Arial,sans-serif!important}
+/* Archive CTA — larger and highlighted (ALLOY lime accent). */
+.work-directory-link{font-size:13px;font-weight:600;color:#eaffb9;padding-top:8px}
+.work-directory-link .round-outline{background:#b8dc66;border-color:#b8dc66;color:#1d2414}
+.work-directory-link:hover{color:#f2ffd2}
+.work-directory-link:hover .round-outline{background:#d1fa7b;border-color:#d1fa7b}
+@media(min-width:1600px){.work-directory-link{font-size:15px}}
