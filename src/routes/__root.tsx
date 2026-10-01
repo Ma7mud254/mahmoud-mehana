@@ -77,21 +77,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { title: "Mahmoud Mehana — Shopify Developer" },
+      {
+        name: "description",
+        content:
+          "Custom Shopify development, Liquid, Arabic storefronts, and the brands behind the work.",
+      },
+      { name: "author", content: "Mahmoud Mehana" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://cdn.jsdelivr.net", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.net/npm/@dawod/thmanyah-font-web@1.2.0/index.css",
+        "data-thmanyah-font": "",
+      },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
   }),
   shellComponent: RootShell,

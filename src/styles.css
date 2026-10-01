@@ -1,6 +1,9 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+/* ALLOY visual system — the real portfolio design. Loaded here so it always
+   wins over the base reset below. Do not replace with a generic theme. */
+@import "./alloy/alloy.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -136,9 +139,11 @@
   * {
     border-color: var(--color-border);
   }
+}
 
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+/* ALLOY owns these two token names; re-declared last so the base theme above
+   cannot override the portfolio design. */
+:root {
+  --radius: 18px;
+  --muted: #62645a;
 }
