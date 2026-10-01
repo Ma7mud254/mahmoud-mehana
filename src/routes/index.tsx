@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { AlloyPortfolio } from "@/components/AlloyPortfolio";
+import ogCoverAsset from "@/assets/og-cover.jpg.asset.json";
 
 const title = "Mahmoud Mehana — Shopify Developer | Building considered Shopify experiences";
 const description =
   "Mahmoud Mehana — Shopify Developer | Building considered Shopify experiences. Custom Liquid, Figma to Shopify, responsive storefronts and thoughtful e-commerce experiences. Explore the work and start a conversation.";
+const ogImage = ogCoverAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
