@@ -78,7 +78,7 @@ html[lang="ar"] .industry-label{font-family:"Thmanyah Serif Display","Thmanyah S
 @media(min-width:1600px){.industry-label{font-size:40px}}
 @media(max-width:1240px){.industry-label{font-size:30px}}
 @media(max-width:1023px){.industry-label{font-size:26px}}
-@media(max-width:767px){.industry-strip{display:flex;flex-direction:column;align-items:flex-start}.industry-label{font-size:27px}[dir=rtl] .industry-label{font-size:25px;line-height:1.5}}
+@media(max-width:767px){.industry-strip{display:flex;flex-direction:column;align-items:flex-start;gap:20px}.industry-label{font-size:27px;margin-bottom:0}[dir=rtl] .industry-label{font-size:25px;line-height:1.5}}
 @media(max-width:370px){.industry-label{font-size:26px}[dir=rtl] .industry-label{font-size:22px}}
 .site-dialog{position:fixed;inset:0;margin:auto}
 @media(max-width:767px){
