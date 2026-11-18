@@ -87,7 +87,10 @@ html[lang="ar"] .industry-label{font-family:"Thmanyah Serif Display","Thmanyah S
 .selected-work>*{flex:0 0 84%;scroll-snap-align:center}
 }
 /* v4.4 featured carousel (desktop + mobile) */
-.selected-work{display:flex!important;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:6px;grid-column:2/3}
+.selected-work{display:flex!important;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:6px;grid-column:2/3;cursor:grab;touch-action:pan-x pan-y;overscroll-behavior-x:contain}
+.selected-work .project-card{cursor:grab}
+.selected-work.is-dragging{scroll-snap-type:none;user-select:none}
+.selected-work.is-dragging,.selected-work.is-dragging *{cursor:grabbing}
 .selected-work::-webkit-scrollbar{display:none}
 .selected-work>*{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start}
 @media(max-width:1023px){.selected-work>*{flex-basis:calc((100% - 16px)/2)}}

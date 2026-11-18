@@ -101,6 +101,31 @@ export function mountPortfolio(root, brands, options = {}) {
     const more=`<button class="project-card project-more" type="button" data-open="directory"><span class="project-more-inner"><small>${words('Browse by industry','تصفح حسب المجال')}</small><strong>${words('See more work','شاهد المزيد من الأعمال')}</strong><p>${words(publicBrands.length+' brands in the full archive','‏'+publicBrands.length+' براند في الأرشيف الكامل')}</p><i class="round-outline">${icon('arrow')}</i></span></button>`;
     $('#selected-work').innerHTML = chosen.length ? cards+more : `<p class="dialog-lead">${words('Featured projects are not available right now. Browse the brand archive.','الأعمال المختارة غير متاحة حاليًا. استعرض أرشيف البراندات.')}</p>`;
   }
+  const workCarousel = $('#selected-work');
+  const workDrag = { active:false, id:null, start:0, scroll:0, moved:false };
+  on(workCarousel,'pointerdown',e=>{
+    if(e.pointerType!=='mouse'||e.button!==0)return;
+    workDrag.active=true;workDrag.id=e.pointerId;workDrag.start=e.clientX;workDrag.scroll=workCarousel.scrollLeft;workDrag.moved=false;
+  });
+  on(window,'pointermove',e=>{
+    if(!workDrag.active||e.pointerId!==workDrag.id)return;
+    const delta=e.clientX-workDrag.start;
+    if(!workDrag.moved&&Math.abs(delta)<=6)return;
+    if(!workDrag.moved){workDrag.moved=true;workCarousel.classList.add('is-dragging');workCarousel.setPointerCapture?.(e.pointerId);}
+    workCarousel.scrollLeft=workDrag.scroll-delta;
+    closeSuppressUntil=performance.now()+450;
+    e.preventDefault();
+  });
+  const endWorkDrag=e=>{
+    if(!workDrag.active||(e.pointerId!==undefined&&e.pointerId!==workDrag.id))return;
+    const id=workDrag.id;
+    workDrag.active=false;workDrag.id=null;workCarousel.classList.remove('is-dragging');
+    if(id!==null&&workCarousel.hasPointerCapture?.(id))workCarousel.releasePointerCapture(id);
+    if(workDrag.moved)closeSuppressUntil=performance.now()+350;
+  };
+  on(window,'pointerup',endWorkDrag);
+  on(window,'pointercancel',endWorkDrag);
+  on(workCarousel,'dragstart',e=>e.preventDefault());
   function renderIndustries() {
     const el=$('#industry-strip');if(!el)return;
     const cats=['Fashion','Beauty','Food','Books','Technology','Lifestyle','Other'].map(c=>[c,publicBrands.filter(b=>b.category===c).length]).filter(([,n])=>n>0);
@@ -179,7 +204,7 @@ export function mountPortfolio(root, brands, options = {}) {
   function renderProject(id) {
     const b=publicBrands.find(b=>b.id===id);if(!b){renderDirectory();return;}
     const p=projectData[id];const tags=p?.tags||['Shopify',b.category||'Storefront'];
-    const description=p?p.brief[lang==='ar'?1:0]:words('A brand in my Shopify work archive. Explore the current store using the enabled link below.','براند من أرشيف شغلي على Shopify. تقدر تستكشف المتجر الحالي من رابط الزيارة لما يكون مفعّل.');
+    const description=p?.brief?p.brief[lang==='ar'?1:0]:words('A brand in my Shopify work archive. Explore the current store using the enabled link below.','براند من أرشيف شغلي على Shopify. تقدر تستكشف المتجر الحالي من رابط الزيارة لما يكون مفعّل.');
     $('#dialog-content').innerHTML=`<section class="dialog-body"><div class="project-dialog-hero">${brandArt(b)}<div class="project-dialog-heading"><span>${esc(categoryName(b.category||'Other').toUpperCase())} / SHOPIFY</span><h2 id="dialog-title">${esc(b.name)}</h2><small>${words('A brand in my work archive.','براند من أرشيف أعمالي.')}</small></div></div><p class="dialog-lead">${esc(description)}</p><div class="tag-list">${tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="project-details-actions">${b.url?`<a class="pill pill-dark" href="${esc(b.url)}" target="_blank" rel="noopener noreferrer">${words('Visit the store','زيارة المتجر')}${icon('arrow-up')}</a>`:`<span class="pill pill-outline">${words('No enabled store link','مفيش رابط متجر مفعّل')}</span>`}<button class="pill pill-outline" type="button" data-open="contact">${words('Have a similar project?','عندك مشروع مشابه؟')}${icon('arrow')}</button><button class="pill pill-outline" type="button" data-open="directory">${words('All brands','كل البراندات')}</button></div><p class="source-note">${words('The visual is a brand presentation, not a screenshot of the live website. Project scope varies and some work was collaborative. Current storefront content may have changed since delivery.','الغلاف عرض بصري للبراند، مش لقطة فعلية للموقع. نطاق العمل بيختلف من مشروع للتاني، وبعض الأعمال اتنفّذت بالتعاون مع فرق. محتوى المتجر الحالي ممكن يكون اتغير بعد التسليم.')}</p></section>`;
   }
   function renderAbout() {
@@ -218,7 +243,7 @@ export function mountPortfolio(root, brands, options = {}) {
   on($('#site-dialog'),'close',()=>{activeDialog='';document.body.style.overflow=previousOverflow;beforeFocus?.focus?.({preventScroll:true});});
   on(root,'click',e=>{
     const target=e.target.closest('button,a');if(!target)return;
-    if(target.closest('.rail-viewport')&&performance.now()<closeSuppressUntil){e.preventDefault();return;}
+    if(target.closest('.rail-viewport,.selected-work')&&performance.now()<closeSuppressUntil){e.preventDefault();return;}
     if(target.dataset.open){e.preventDefault();openDialog(target.dataset.open);}
     if(target.dataset.project){e.preventDefault();openDialog('project:'+target.dataset.project);}
     if(target.dataset.filter){category=target.dataset.filter;limit=24;renderDirectoryCards();}
