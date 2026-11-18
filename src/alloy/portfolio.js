@@ -56,6 +56,16 @@ export function mountPortfolio(root, brands, options = {}) {
   const projectData = {
     'scents-boutique': { theme:'scents', label:['BEAUTY & FRAGRANCE','الجمال والعطور'], brief:['Custom Liquid, landing pages and responsive storefront details.','أقسام Liquid وصفحات هبوط وتجربة متناسقة على الموبايل.'], tags:['Custom Liquid','Landing pages','Responsive UI'] },
     'mema-outlet': { theme:'mema', label:['FASHION & RETAIL','الأزياء والتجزئة'], brief:['Design-led Shopify customization, from Figma to the storefront.','تخصيص Shopify وتنفيذ التصميم من Figma للمتجر.'], tags:['Figma to Shopify','Theme customization','Storefront UI'] },
+    '8bf7f494-0886-4e19-a5dc-64ea3ae6a08f': { theme:'kitchen', label:['HOME & KITCHEN APPLIANCES','الأجهزة المنزلية والمطبخ'] },
+    'cc2b915b-e0fb-41fd-9bc9-8e8a588f76e1': { theme:'showcase', label:['SHOPIFY STOREFRONT','متجر Shopify'] },
+    '874e4874-7b86-4512-aa3a-460abe872b9f': { theme:'towels', label:['HOME TEXTILES','المفروشات والمناشف'] },
+    'c9fd40ff-e07e-475f-b77c-064137979ff4': { theme:'tech', label:['ELECTRONICS & SMART HOME','الإلكترونيات والمنزل الذكي'] },
+    'e146e7ed-637d-4547-a879-f39efe939d2c': { theme:'cream', label:['BEAUTY & SKINCARE','الجمال والعناية'] },
+    'b15184f5-af66-498d-96ae-71f76352989a': { theme:'bowl', label:['FOOD & GROCERY','الأغذية'] },
+    '59febfec-7d4d-40d2-b4a1-96d09f409d12': { theme:'hanger', label:['FASHION & APPAREL','الأزياء والملابس'] },
+    'c0afb3a5-e8cd-4171-9409-1511d395b3d2': { theme:'coffee', label:['SWEETS & COFFEE','الحلويات والقهوة'] },
+    '36e0524b-e1d9-4838-bf9b-7dfbcfb3ca92': { theme:'luggage', label:['LUGGAGE & TRAVEL','الشنط ومستلزمات السفر'] },
+    '3m-watches': { theme:'watch', label:['WATCHES & ACCESSORIES','الساعات والإكسسوارات'] },
     'tashkeel': { theme:'tashkeel', label:['BOOKS & PUBLISHING','الكتب والنشر'], brief:['Custom templates, dynamic metafields and an Arabic experience.','قوالب مخصصة وMetafields ديناميكية وتجربة عربية.'], tags:['Custom templates','Metafields','Arabic / RTL'] }
   };
   function brandArt(b) {
@@ -64,6 +74,16 @@ export function mountPortfolio(root, brands, options = {}) {
       scents:`<div class="scents-window"></div><div class="scent-leaf"></div><div class="scents-plinth"></div><div class="scents-bottle">${lg}</div>`,
       mema:`<div class="mema-drape"></div><div class="mema-bag">${lg}</div>`,
       tashkeel:`<div class="book-surface"></div><div class="brand-book book-back"></div><div class="brand-book">${lg}<span>One more<br>chapter.</span></div>`,
+      kitchen:`<div class="nx-floor"></div><div class="nx-pot"><span class="nx-lid"></span>${lg}</div><div class="nx-steam"></div>`,
+      showcase:`<div class="nx-floor"></div><div class="nx-frame">${lg}</div>`,
+      towels:`<div class="nx-floor"></div><div class="nx-towel t3"></div><div class="nx-towel t2"></div><div class="nx-towel t1">${lg}</div>`,
+      tech:`<div class="nx-floor"></div><div class="nx-speaker">${lg}<span></span></div><div class="nx-phone"></div>`,
+      cream:`<div class="scent-leaf"></div><div class="nx-floor"></div><div class="nx-jar"><span class="nx-cap"></span>${lg}</div><div class="nx-tube"></div>`,
+      bowl:`<div class="nx-floor"></div><div class="nx-bowl"><span class="nx-fruit"></span>${lg}</div>`,
+      hanger:`<div class="mema-drape"></div><div class="nx-hook"></div><div class="nx-shirt">${lg}</div>`,
+      coffee:`<div class="nx-floor"></div><div class="nx-steam"></div><div class="nx-cup">${lg}<span></span></div><div class="nx-date"></div>`,
+      luggage:`<div class="nx-floor"></div><div class="nx-case"><span class="nx-handle"></span>${lg}</div><div class="nx-tag"></div>`,
+      watch:`<div class="nx-floor"></div><div class="nx-strap"></div><div class="nx-watch">${lg}</div>`,
       general:lg
     };
     return `<div class="project-art art-${theme}" aria-hidden="true">${art[theme]}</div>`;
@@ -75,7 +95,7 @@ export function mountPortfolio(root, brands, options = {}) {
     const cards=chosen.map((b,i)=>{
       const p=projectData[b.id];
       const label=p?p.label[L]:(b.meta||b.category||'Shopify');
-      const brief=p?p.brief[L]:(b.headline||b.description||'');
+      const brief=p?.brief?p.brief[L]:(b.headline||b.description||'');
       return `<button class="project-card" type="button" data-project="${esc(b.id)}" aria-label="${esc(words('View project: ','استعرض: ') + b.name)}">${brandArt(b)}<span class="art-counter">${String(i+1).padStart(2,'0')}</span><span class="art-note">BRAND PRESENTATION</span><span class="project-card-content"><small>${esc(label)}</small><strong>${esc(b.name)}</strong><p>${esc(brief)}</p><span class="project-card-bottom"><i>${icon('arrow')}</i><span>${words('Explore the project','استعرض المشروع')}</span></span></span></button>`;
     }).join('');
     const more=`<button class="project-card project-more" type="button" data-open="directory"><span class="project-more-inner"><small>${words('Browse by industry','تصفح حسب المجال')}</small><strong>${words('See more work','شاهد المزيد من الأعمال')}</strong><p>${words(publicBrands.length+' brands in the full archive','‏'+publicBrands.length+' براند في الأرشيف الكامل')}</p><i class="round-outline">${icon('arrow')}</i></span></button>`;
