@@ -69,3 +69,12 @@ html[lang="ar"] .project-card-content>strong,html[lang="ar"] .permanent-contact-
 @media (max-width:640px){.industry-chip{font-size:12px;padding:8px 13px}}
 .industry-icon{width:18px;height:18px;flex-shrink:0;color:var(--lime)}
 .industry-chip:hover .industry-icon,.industry-chip:focus-visible .industry-icon{color:var(--ink)}
+/* v4.3 tweaks: no edge note, industry row under cards, centered dialog, mobile carousel */
+.work-section{grid-template-columns:254px 1fr}
+.industry-strip{grid-column:2/3}
+.site-dialog{position:fixed;inset:0;margin:auto}
+@media(max-width:767px){
+.selected-work{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-6%;padding:0 6% 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.selected-work::-webkit-scrollbar{display:none}
+.selected-work>*{flex:0 0 84%;scroll-snap-align:center}
+}
