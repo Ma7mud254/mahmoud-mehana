@@ -83,7 +83,7 @@ export function mountPortfolio(root, brands, options = {}) {
     el.innerHTML=cats.length?`<p class="industry-label">${words('Browse by industry','تصفّح حسب المجال')}</p><div class="industry-chips">${cats.map(([c,n])=>`<button type="button" class="industry-chip" data-open="directory" data-filter="${c}">${nicon(c)}<span>${esc(categoryName(c))}</span><b>${String(n).padStart(2,'0')}</b></button>`).join('')}</div>`:'';
   }
   function renderServices() {
-    $('#expertise-cards').innerHTML = services.map(s => `<button class="expertise-card" type="button" data-service="${s.id}"><span class="service-icon">${icon(s.icon)}</span><span class="service-arrow">${icon('arrow-up')}</span><strong>${esc(s.title[lang==='ar'?1:0])}</strong><p>${esc(s.short[lang==='ar'?1:0])}</p></button>`).join('');
+    $('#expertise-cards').innerHTML = services.map(s => `<article class="expertise-card"><span class="service-icon">${icon(s.icon)}</span><strong>${esc(s.title[lang==='ar'?1:0])}</strong><p>${esc(s.short[lang==='ar'?1:0])}</p></article>`).join('');
   }
   function renderRails() {
     const priority = ['deja','kayan-international-plus','scents-boutique','mema-outlet','tashkeel','nawah','ctrl-cairo','avens-cosmetics','elle-perfume','aghsan','dawen','qayro'];
@@ -159,10 +159,6 @@ export function mountPortfolio(root, brands, options = {}) {
   function renderAbout() {
     $('#dialog-content').innerHTML=`<section class="dialog-body about-grid"><div class="about-portrait"><img src="${esc(asset('images/mahmoud-mehana.webp'))}" alt="Mahmoud Mehana"/></div><div><p class="dialog-eyebrow">MAHMOUD MEHANA / SHOPIFY DEVELOPER</p><h2 id="dialog-title">${words('The person\nbehind the details.','الشخص اللي\nورا التفاصيل.')}</h2><p>${words('I work at the intersection of design and Shopify development — turning visual direction into storefronts that feel clear, considered and true to the brand.','شغلي بيجمع بين التصميم وتطوير Shopify — بحوّل الفكرة البصرية لمتجر واضح ومدروس وبيعكس هوية البراند.')}</p><p>${words('From custom Liquid and dynamic templates to Arabic layouts and mobile refinements, I care about how the whole experience comes together. Some projects were delivered collaboratively.','من أقسام Liquid والقوالب الديناميكية لواجهات عربية وتفاصيل الموبايل، بهتم بالتجربة كلها مش جزء منها. بعض المشاريع اتنفّذت بالتعاون مع فرق عمل.')}</p><div class="about-stack"><span>Shopify</span><span>Liquid</span><span>Figma → Code</span><span>JavaScript</span><span>Arabic / RTL</span><span>Responsive UI</span></div><div class="project-details-actions"><button class="pill pill-dark" type="button" data-open="contact">${words('Let’s make something good','نعمل حاجة مختلفة سوا')}${icon('arrow')}</button></div></div></section>`;
   }
-  function renderService(id) {
-    const s=services.find(s=>s.id===id);if(!s)return;
-    $('#dialog-content').innerHTML=`<section class="dialog-body service-dialog"><span class="service-icon">${icon(s.icon)}</span><p class="dialog-eyebrow">THE DETAILS THAT MAKE A DIFFERENCE</p><h2 id="dialog-title">${esc(s.title[lang==='ar'?1:0])}</h2><p class="dialog-lead">${esc(s.lead[lang==='ar'?1:0])}</p><div class="service-inclusions">${s.inclusions.map(pair=>`<div>${icon('check')}<span>${esc(pair[lang==='ar'?1:0])}</span></div>`).join('')}</div><button class="pill pill-dark" type="button" data-open="contact">${words('Let’s discuss your store','نتكلم عن متجرك')}${icon('arrow')}</button></section>`;
-  }
   function submitProjectEnquiry(form) {
     if(!form?.reportValidity())return;
     const fields=new FormData(form);
@@ -177,7 +173,7 @@ export function mountPortfolio(root, brands, options = {}) {
     on($('#project-enquiry'),'submit',e=>{e.preventDefault();submitProjectEnquiry(e.currentTarget);});
   }
   function renderDialog(type) {
-    if(type==='directory')renderDirectory();else if(type==='contact')renderContact();else if(type==='about')renderAbout();else if(type.startsWith('project:'))renderProject(type.slice(8));else if(type.startsWith('service:'))renderService(type.slice(8));
+    if(type==='directory')renderDirectory();else if(type==='contact')renderContact();else if(type==='about')renderAbout();else if(type.startsWith('project:'))renderProject(type.slice(8));
     hydrateIcons($('#site-dialog'));
   }
   function openDialog(type) {
@@ -199,7 +195,6 @@ export function mountPortfolio(root, brands, options = {}) {
     if(target.closest('.rail-viewport')&&performance.now()<closeSuppressUntil){e.preventDefault();return;}
     if(target.dataset.open){e.preventDefault();openDialog(target.dataset.open);}
     if(target.dataset.project){e.preventDefault();openDialog('project:'+target.dataset.project);}
-    if(target.dataset.service){e.preventDefault();openDialog('service:'+target.dataset.service);}
     if(target.dataset.filter){category=target.dataset.filter;limit=24;renderDirectoryCards();}
     if(target.matches('.mobile-navigation a'))closeMenu();
     if(target=== $('#language-switch')){lang=lang==='ar'?'en':'ar';storage.set('mm-language',lang);translate();}
