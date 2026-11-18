@@ -67,3 +67,5 @@ html[lang="ar"] .project-card-content>strong,html[lang="ar"] .permanent-contact-
 .industry-chip:hover,.industry-chip:focus-visible{background:var(--lime);color:var(--ink);border-color:var(--lime)}
 .industry-chip:hover b,.industry-chip:focus-visible b{background:var(--ink);color:var(--lime)}
 @media (max-width:640px){.industry-chip{font-size:12px;padding:8px 13px}}
+.industry-icon{width:18px;height:18px;flex-shrink:0;color:var(--lime)}
+.industry-chip:hover .industry-icon,.industry-chip:focus-visible .industry-icon{color:var(--ink)}

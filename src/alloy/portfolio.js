@@ -78,7 +78,9 @@ export function mountPortfolio(root, brands, options = {}) {
   function renderIndustries() {
     const el=$('#industry-strip');if(!el)return;
     const cats=['Fashion','Beauty','Food','Books','Technology','Lifestyle','Other'].map(c=>[c,publicBrands.filter(b=>b.category===c).length]).filter(([,n])=>n>0);
-    el.innerHTML=cats.length?`<p class="industry-label">${words('Browse by industry','تصفّح حسب المجال')}</p><div class="industry-chips">${cats.map(([c,n])=>`<button type="button" class="industry-chip" data-open="directory" data-filter="${c}"><span>${esc(categoryName(c))}</span><b>${String(n).padStart(2,'0')}</b></button>`).join('')}</div>`:'';
+    const ni={Fashion:'<path d="M9 3 4 6l2 4 2-1v12h8V9l2 1 2-4-5-3a3 3 0 0 1-6 0Z"/>',Beauty:'<path d="M10 2h4v4h-4zM8 6h8l1 3v12H7V9z"/><path d="M7 13h10"/>',Food:'<path d="M5 3v8a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 0-3 3-3 6s1 4 3 4v8"/>',Books:'<path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/>',Technology:'<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/>',Lifestyle:'<path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11Z"/>',Other:'<path d="M12 3 3 8l9 5 9-5zM3 13l9 5 9-5"/>'};
+    const nicon=c=>`<svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ni[c]||ni.Other}</svg>`;
+    el.innerHTML=cats.length?`<p class="industry-label">${words('Browse by industry','تصفّح حسب المجال')}</p><div class="industry-chips">${cats.map(([c,n])=>`<button type="button" class="industry-chip" data-open="directory" data-filter="${c}">${nicon(c)}<span>${esc(categoryName(c))}</span><b>${String(n).padStart(2,'0')}</b></button>`).join('')}</div>`:'';
   }
   function renderServices() {
     $('#expertise-cards').innerHTML = services.map(s => `<button class="expertise-card" type="button" data-service="${s.id}"><span class="service-icon">${icon(s.icon)}</span><span class="service-arrow">${icon('arrow-up')}</span><strong>${esc(s.title[lang==='ar'?1:0])}</strong><p>${esc(s.short[lang==='ar'?1:0])}</p></button>`).join('');
