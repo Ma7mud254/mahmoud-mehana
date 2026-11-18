@@ -69,11 +69,17 @@ export function mountPortfolio(root, brands, options = {}) {
     return `<div class="project-art art-${theme}" aria-hidden="true">${art[theme]}</div>`;
   }
   function renderProjects() {
-    const chosen = selectedIDs.map(id => publicBrands.find(b => b.id === id)).filter(Boolean);
-    $('#selected-work').innerHTML = chosen.length ? chosen.map((b,i) => {
-      const p = projectData[b.id];
-      return `<button class="project-card" type="button" data-project="${esc(b.id)}" aria-label="${esc(words('View project: ','استعرض: ') + b.name)}">${brandArt(b)}<span class="art-counter">0${i+1}</span><span class="art-note">BRAND PRESENTATION</span><span class="project-card-content"><small>${esc(p.label[lang==='ar'?1:0])}</small><strong>${esc(b.name)}</strong><p>${esc(p.brief[lang==='ar'?1:0])}</p><span class="project-card-bottom"><i>${icon('arrow')}</i><span>${words('Explore the project','استعرض المشروع')}</span></span></span></button>`;
-    }).join('') : `<p class="dialog-lead">${words('Featured projects are not available right now. Browse the brand archive.','الأعمال المختارة غير متاحة حاليًا. استعرض أرشيف البراندات.')}</p>`;
+    const rank=b=>{const i=selectedIDs.indexOf(b.id);return i<0?99:i;};
+    const chosen=[...publicBrands].sort((a,b)=>(Date.parse(b.created_at||0)||0)-(Date.parse(a.created_at||0)||0)||rank(a)-rank(b)||(a.position??0)-(b.position??0)).slice(0,10);
+    const L=lang==='ar'?1:0;
+    const cards=chosen.map((b,i)=>{
+      const p=projectData[b.id];
+      const label=p?p.label[L]:(b.meta||b.category||'Shopify');
+      const brief=p?p.brief[L]:(b.headline||b.description||'');
+      return `<button class="project-card" type="button" data-project="${esc(b.id)}" aria-label="${esc(words('View project: ','استعرض: ') + b.name)}">${brandArt(b)}<span class="art-counter">${String(i+1).padStart(2,'0')}</span><span class="art-note">BRAND PRESENTATION</span><span class="project-card-content"><small>${esc(label)}</small><strong>${esc(b.name)}</strong><p>${esc(brief)}</p><span class="project-card-bottom"><i>${icon('arrow')}</i><span>${words('Explore the project','استعرض المشروع')}</span></span></span></button>`;
+    }).join('');
+    const more=`<button class="project-card project-more" type="button" data-open="directory"><span class="project-more-inner"><small>${words('Browse by industry','تصفح حسب المجال')}</small><strong>${words('See more work','شاهد المزيد من الأعمال')}</strong><p>${words(publicBrands.length+' brands in the full archive','‏'+publicBrands.length+' براند في الأرشيف الكامل')}</p><i class="round-outline">${icon('arrow')}</i></span></button>`;
+    $('#selected-work').innerHTML = chosen.length ? cards+more : `<p class="dialog-lead">${words('Featured projects are not available right now. Browse the brand archive.','الأعمال المختارة غير متاحة حاليًا. استعرض أرشيف البراندات.')}</p>`;
   }
   function renderIndustries() {
     const el=$('#industry-strip');if(!el)return;
@@ -194,6 +200,7 @@ export function mountPortfolio(root, brands, options = {}) {
     const target=e.target.closest('button,a');if(!target)return;
     if(target.closest('.rail-viewport')&&performance.now()<closeSuppressUntil){e.preventDefault();return;}
     if(target.dataset.open){e.preventDefault();openDialog(target.dataset.open);}
+    if(target.dataset.workNav){const w=$('#selected-work'),c=w.firstElementChild;const dir=document.documentElement.dir==='rtl'?-1:1;w.scrollBy({left:(c?c.offsetWidth+16:300)*Number(target.dataset.workNav)*dir,behavior:'smooth'});return;}
     if(target.dataset.project){e.preventDefault();openDialog('project:'+target.dataset.project);}
     if(target.dataset.filter){category=target.dataset.filter;limit=24;renderDirectoryCards();}
     if(target.matches('.mobile-navigation a'))closeMenu();

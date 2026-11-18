@@ -86,3 +86,21 @@ html[lang="ar"] .industry-label{font-family:"Thmanyah Serif Display","Thmanyah S
 .selected-work::-webkit-scrollbar{display:none}
 .selected-work>*{flex:0 0 84%;scroll-snap-align:center}
 }
+/* v4.4 featured carousel (desktop + mobile) */
+.selected-work{display:flex!important;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:6px;grid-column:2/3}
+.selected-work::-webkit-scrollbar{display:none}
+.selected-work>*{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start}
+@media(max-width:1023px){.selected-work>*{flex-basis:calc((100% - 16px)/2)}}
+@media(max-width:767px){.selected-work>*{flex-basis:84%}}
+.project-more{display:grid!important;place-items:center;background:radial-gradient(circle at 70% 20%,#b8dc6633,transparent 60%),#1a1f15;border-style:dashed;border-color:#b8dc66}
+.project-more:before{display:none}
+.project-more-inner{position:relative;z-index:4;display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:22px}
+.project-more-inner small{font-size:8px;letter-spacing:1px;text-transform:uppercase;color:#b8dc66}
+.project-more-inner strong{font-size:26px;letter-spacing:-1px;font-weight:650;color:#eff2e5}
+.project-more-inner p{font-size:11px;color:#c3cab7;margin:0 0 6px}
+.project-more:hover .round-outline{transform:rotate(-40deg)}
+.work-nav{grid-column:2/3;display:flex;gap:8px;justify-content:flex-end;margin-top:-8px}
+.work-nav button{width:36px;height:36px;border-radius:50%;border:1px solid #b8dc66;color:#d1fa7b;display:grid;place-items:center;background:transparent;cursor:pointer}
+.work-nav button:hover{background:#b8dc66;color:#1d2414}
+[dir=rtl] .work-nav button{transform:scaleX(-1)}
+@media(max-width:767px){.work-nav{display:none}}
