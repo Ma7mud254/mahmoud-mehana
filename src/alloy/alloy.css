@@ -58,9 +58,9 @@ html[lang="ar"] .project-card-content>strong,html[lang="ar"] .permanent-contact-
 @media(min-width:1600px){.work-directory-link{font-size:15px}}
 
 /* Browse by industry strip (work section, dark surface) */
-.industry-strip{grid-column:1/-1;margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.industry-strip{grid-column:1/-1;margin-top:28px;display:grid;grid-template-columns:subgrid;align-items:start}
 .industry-strip:empty{display:none}
-.industry-label{margin:0;flex:0 0 100%;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#a9ad9c}
+.industry-label{margin:0;font-size:34px;line-height:1.07;letter-spacing:-1.5px;color:#eff2e5;white-space:pre-line}
 .industry-chips{display:flex;flex-wrap:wrap;gap:10px}
 .industry-chip{display:inline-flex;align-items:center;gap:10px;border:1px solid #cafd4855;background:transparent;color:#eaffb9;border-radius:999px;padding:10px 16px;font:600 14px var(--font);cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
 .industry-chip b{font-size:11px;padding:3px 7px;border-radius:999px;background:#cafd481f;color:var(--lime)}
@@ -71,7 +71,15 @@ html[lang="ar"] .project-card-content>strong,html[lang="ar"] .permanent-contact-
 .industry-chip:hover .industry-icon,.industry-chip:focus-visible .industry-icon{color:var(--ink)}
 /* v4.3 tweaks: no edge note, industry row under cards, centered dialog, mobile carousel */
 .work-section{grid-template-columns:254px 1fr}
-.industry-strip{grid-column:2/3}
+.industry-strip{grid-column:1/-1}
+/* "Browse by industry" mirrors the .work-intro h2 heading at every breakpoint */
+[dir=rtl] .industry-label{font-size:29px;line-height:1.45;letter-spacing:-.8px}
+html[lang="ar"] .industry-label{font-family:"Thmanyah Serif Display","Thmanyah Sans",Tahoma,Arial,sans-serif!important;font-feature-settings:"ss01" 1}
+@media(min-width:1600px){.industry-label{font-size:40px}}
+@media(max-width:1240px){.industry-label{font-size:30px}}
+@media(max-width:1023px){.industry-label{font-size:26px}}
+@media(max-width:767px){.industry-strip{display:flex;flex-direction:column;align-items:flex-start}.industry-label{font-size:27px}[dir=rtl] .industry-label{font-size:25px;line-height:1.5}}
+@media(max-width:370px){.industry-label{font-size:26px}[dir=rtl] .industry-label{font-size:22px}}
 .site-dialog{position:fixed;inset:0;margin:auto}
 @media(max-width:767px){
 .selected-work{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-6%;padding:0 6% 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
