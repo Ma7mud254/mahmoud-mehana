@@ -99,11 +99,6 @@ html[lang="ar"] .industry-label{font-family:"Thmanyah Serif Display","Thmanyah S
 .project-more-inner strong{font-size:26px;letter-spacing:-1px;font-weight:650;color:#eff2e5}
 .project-more-inner p{font-size:11px;color:#c3cab7;margin:0 0 6px}
 .project-more:hover .round-outline{transform:rotate(-40deg)}
-.work-nav{grid-column:2/3;display:flex;gap:8px;justify-content:flex-end;margin-top:-8px}
-.work-nav button{width:36px;height:36px;border-radius:50%;border:1px solid #b8dc66;color:#d1fa7b;display:grid;place-items:center;background:transparent;cursor:pointer}
-.work-nav button:hover{background:#b8dc66;color:#1d2414}
-[dir=rtl] .work-nav button{transform:scaleX(-1)}
-@media(max-width:767px){.work-nav{display:none}}
 
 /* v4.4 — premium thin scrollbar on the right for the archive dialog */
 .site-dialog{direction:ltr;scrollbar-gutter:stable}

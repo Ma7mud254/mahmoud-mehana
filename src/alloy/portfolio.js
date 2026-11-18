@@ -220,7 +220,6 @@ export function mountPortfolio(root, brands, options = {}) {
     const target=e.target.closest('button,a');if(!target)return;
     if(target.closest('.rail-viewport')&&performance.now()<closeSuppressUntil){e.preventDefault();return;}
     if(target.dataset.open){e.preventDefault();openDialog(target.dataset.open);}
-    if(target.dataset.workNav){const w=$('#selected-work'),c=w.firstElementChild;const dir=document.documentElement.dir==='rtl'?-1:1;w.scrollBy({left:(c?c.offsetWidth+16:300)*Number(target.dataset.workNav)*dir,behavior:'smooth'});return;}
     if(target.dataset.project){e.preventDefault();openDialog('project:'+target.dataset.project);}
     if(target.dataset.filter){category=target.dataset.filter;limit=24;renderDirectoryCards();}
     if(target.matches('.mobile-navigation a'))closeMenu();
