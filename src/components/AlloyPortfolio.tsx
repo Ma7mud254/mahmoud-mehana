@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import markup from "@/alloy/portfolio.html?raw";
 import seedBrands from "@/alloy/data/brands.json";
 import type { PortfolioBrand } from "@/alloy/portfolio.js";
+import { recordVisit } from "@/lib/visits.functions";
 
 /**
  * Mounts the ALLOY portfolio UI (real DOM, built from src/alloy/portfolio.html,
@@ -54,6 +55,24 @@ export function AlloyPortfolio() {
           assetBase: "/",
           loadThree: () => import("three"),
         });
+
+        // Anonymous visit stats for the owner dashboard.
+        const ownHost = window.location.hostname;
+        const ref = document.referrer && !document.referrer.includes(ownHost) ? document.referrer : null;
+        void recordVisit({ data: { kind: "view", brandId: null, referrer: ref } }).catch(() => {});
+        const hostOf = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
+        const onTrack = (e: Event) => {
+          const el = (e.target as HTMLElement | null)?.closest?.("[data-project], a[href^='http']");
+          if (!el) return;
+          const project = el.getAttribute("data-project");
+          if (project) { void recordVisit({ data: { kind: "brand_open", brandId: project, referrer: null } }).catch(() => {}); return; }
+          const host = hostOf(el.getAttribute("href") ?? "");
+          const brand = brands.find((b) => b.url && hostOf(b.url) === host);
+          if (brand) void recordVisit({ data: { kind: "store_click", brandId: brand.id, referrer: null } }).catch(() => {});
+        };
+        node.addEventListener("click", onTrack, true);
+        const baseCleanup = cleanup;
+        cleanup = () => { node.removeEventListener("click", onTrack, true); baseCleanup?.(); };
 
         if (unavailable) {
           const notice = document.createElement("p");

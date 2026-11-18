@@ -75,6 +75,11 @@ export function mountPortfolio(root, brands, options = {}) {
       return `<button class="project-card" type="button" data-project="${esc(b.id)}" aria-label="${esc(words('View project: ','استعرض: ') + b.name)}">${brandArt(b)}<span class="art-counter">0${i+1}</span><span class="art-note">BRAND PRESENTATION</span><span class="project-card-content"><small>${esc(p.label[lang==='ar'?1:0])}</small><strong>${esc(b.name)}</strong><p>${esc(p.brief[lang==='ar'?1:0])}</p><span class="project-card-bottom"><i>${icon('arrow')}</i><span>${words('Explore the project','استعرض المشروع')}</span></span></span></button>`;
     }).join('') : `<p class="dialog-lead">${words('Featured projects are not available right now. Browse the brand archive.','الأعمال المختارة غير متاحة حاليًا. استعرض أرشيف البراندات.')}</p>`;
   }
+  function renderIndustries() {
+    const el=$('#industry-strip');if(!el)return;
+    const cats=['Fashion','Beauty','Food','Books','Technology','Lifestyle','Other'].map(c=>[c,publicBrands.filter(b=>b.category===c).length]).filter(([,n])=>n>0);
+    el.innerHTML=cats.length?`<p class="industry-label">${words('Browse by industry','تصفّح حسب المجال')}</p><div class="industry-chips">${cats.map(([c,n])=>`<button type="button" class="industry-chip" data-open="directory" data-filter="${c}"><span>${esc(categoryName(c))}</span><b>${String(n).padStart(2,'0')}</b></button>`).join('')}</div>`:'';
+  }
   function renderServices() {
     $('#expertise-cards').innerHTML = services.map(s => `<button class="expertise-card" type="button" data-service="${s.id}"><span class="service-icon">${icon(s.icon)}</span><span class="service-arrow">${icon('arrow-up')}</span><strong>${esc(s.title[lang==='ar'?1:0])}</strong><p>${esc(s.short[lang==='ar'?1:0])}</p></button>`).join('');
   }
@@ -114,7 +119,7 @@ export function mountPortfolio(root, brands, options = {}) {
     const switcher=$('#language-switch');switcher.textContent=lang==='ar'?'EN':'عربي';switcher.setAttribute('aria-label',words('Switch to Arabic','Switch to English'));
     $('#hero-brand-count').textContent=String(publicBrands.length);$('#ribbon-count').textContent=String(publicBrands.length);
     document.title=words('Mahmoud Mehana — Shopify Developer','محمود مهنا — مطوّر Shopify');
-    renderServices();renderProjects();renderRails();hydrateIcons();updateMotionUI();
+    renderServices();renderProjects();renderIndustries();renderRails();hydrateIcons();updateMotionUI();
     if(activeDialog){renderDialog(activeDialog);}
   }
   function updateMotionUI() {

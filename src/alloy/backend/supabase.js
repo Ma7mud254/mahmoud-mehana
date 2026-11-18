@@ -80,6 +80,7 @@ export function createSupabaseBackend(config) {
       await request('/auth/v1/user',{method:'PUT',token:await token(),body:{password}});
       await request('/auth/v1/logout?scope=global',{method:'POST',token:await token()});keep(null);return {ok:true};
     },
+    visitorStats:async(days=30)=>request('/rest/v1/rpc/portfolio_visit_stats',{method:'POST',body:{days},token:await token()}),
     exportData:async()=>({format:'mahmoud-mehana-brands',version:1,exported_at:new Date().toISOString(),brands:await listAll(true),note:'Cloud export includes logo URLs. Export Storage separately for a complete offline backup.'})
   };
 }

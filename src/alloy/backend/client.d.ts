@@ -15,5 +15,6 @@ export interface Backend {
   upload(blob: Blob): Promise<{ logo: string }>;
   changePassword(current: string, password: string): Promise<unknown>;
   exportData(): Promise<unknown>;
+  visitorStats?(days?: number): Promise<unknown>;
 }
 export function createBackend(config?: { supabaseUrl?: string; supabaseKey?: string; mode?: string }): Backend | null;

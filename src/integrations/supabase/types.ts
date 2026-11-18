@@ -95,12 +95,43 @@ export type Database = {
         }
         Relationships: []
       }
+      portfolio_visits: {
+        Row: {
+          brand_id: string | null
+          country: string | null
+          created_at: string
+          device: string
+          id: number
+          kind: string
+          referrer_host: string | null
+        }
+        Insert: {
+          brand_id?: string | null
+          country?: string | null
+          created_at?: string
+          device?: string
+          id?: never
+          kind: string
+          referrer_host?: string | null
+        }
+        Update: {
+          brand_id?: string | null
+          country?: string | null
+          created_at?: string
+          device?: string
+          id?: never
+          kind?: string
+          referrer_host?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
       is_portfolio_admin: { Args: never; Returns: boolean }
+      portfolio_visit_stats: { Args: { days?: number }; Returns: Json }
     }
     Enums: {
       [_ in never]: never
