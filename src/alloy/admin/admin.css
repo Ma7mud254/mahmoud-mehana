@@ -29,3 +29,4 @@ html[lang="ar"] .admin-page h1,html[lang="ar"] .admin-page h2,html[lang="ar"] .a
 .ad-stat-list{list-style:none;margin:0;padding:0;display:grid;gap:9px}.ad-stat-list li{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:12px;align-items:center}.ad-stat-list li i{grid-column:1/-1;grid-row:2;height:5px;background:#cafd48;border-radius:3px}.ad-stat-list li small{grid-column:1;color:#8a857e;font-size:10px}.ad-stat-list li b{grid-row:1;grid-column:2;font-family:'DM Sans',Arial,sans-serif}
 .ad-stat-empty,.ad-stat-note{color:#8a857e;font-size:11px}
 @media (max-width:640px){.ad-stat-grid{grid-template-columns:1fr}}
+.ad-content>[hidden]{display:none!important}.ad-visitors-page{background:var(--ad-surface,#fbfbf5);border:1px solid #d9dccb;border-radius:20px;padding:20px 0 0}.ad-visitors-page .ad-dialog-header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:8px 28px 0}
