@@ -60,7 +60,7 @@ html[lang="ar"] .project-card-content>strong,html[lang="ar"] .permanent-contact-
 /* Browse by industry strip (work section, dark surface) */
 .industry-strip{grid-column:1/-1;margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
 .industry-strip:empty{display:none}
-.industry-label{margin:0;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#a9ad9c}
+.industry-label{margin:0;flex:0 0 100%;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#a9ad9c}
 .industry-chips{display:flex;flex-wrap:wrap;gap:10px}
 .industry-chip{display:inline-flex;align-items:center;gap:10px;border:1px solid #cafd4855;background:transparent;color:#eaffb9;border-radius:999px;padding:10px 16px;font:600 14px var(--font);cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
 .industry-chip b{font-size:11px;padding:3px 7px;border-radius:999px;background:#cafd481f;color:var(--lime)}
